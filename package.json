@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/Geroxan810/code-train/issues"
   },
-  "homepage": "https://github.com/Geroxan810/code-train#readme"
+  "homepage": "https://github.com/Geroxan810/code-train#readme",
+  "devDependencies": {
+    "browser-sync": "^2.14.0",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-sass": "^2.3.2"
+  }
 }

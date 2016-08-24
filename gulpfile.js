@@ -23,17 +23,19 @@ gulp.task('sass', function() {
 gulp.task('browserSync', function() {
   browserSync.init({
    server: {
-   baseDir: 'app'
+   baseDir: 'app',
+   port: 3000,
   },
+
   })
 })
 
 
 
-gulp.task('watch', ['browserSync', 'sass', 'autoprefixer'], function (){
- gulp.watch('app/scss/**/*.scss', ['sass']);
+gulp.task('watch', ['sass', 'browserSync', 'autoprefixer'], function (){
+  gulp.watch('app/scss/**/*.scss', ['sass']);
   gulp.watch('app/css/*.css', ['autoprefixer']);
  // Reloads the browser whenever HTML or JS files change
   gulp.watch('app/*.html', browserSync.reload);
   gulp.watch('app/js/**/*.js', browserSync.reload);
-}); 
+});
