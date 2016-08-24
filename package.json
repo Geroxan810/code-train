@@ -1,0 +1,19 @@
+{
+  "name": "code-train",
+  "version": "1.0.0",
+  "description": "code training",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Geroxan810/code-train.git"
+  },
+  "author": "Ales Mraz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Geroxan810/code-train/issues"
+  },
+  "homepage": "https://github.com/Geroxan810/code-train#readme"
+}
