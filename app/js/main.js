@@ -23,24 +23,31 @@ function formatDate(d)
     }
 
     return day + '/' + month + '/' + year;
+
 }
 
 var d = new Date();
-document.getElementById('date').innerHTML = formatDate(d)
+document.getElementById('date').innerHTML = formatDate(d);
 
+function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10)
+        seconds = parseInt(timer % 60, 10);
 
-function updateClock() {
-    var now = new Date(), // current date
-        months = ['January', 'February', '...']; // you get the idea
-        time = now.getHours() + ':' + now.getMinutes(), // again, you get the idea
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
 
-        // a cleaner way than string concatenation
-        date = [now.getDate(),
-                months[now.getMonth()],
-                now.getFullYear()].join(' ');
+        display.text(minutes + ":" + seconds);
 
-    // set the content of the element with the ID time to the formatted string
-    document.getElementById('time').innerHTML = [date, time].join(' / ');
-    setTimeout(updateClock, 1000);
+        if (--timer < 0) {
+            timer = duration;
+        }
+    }, 1000);
 }
-updateClock();
+
+$(function ($) {
+    var fiveMinutes = 60 * 5,
+        display = $('#time');
+    startTimer(fiveMinutes, display);
+});
