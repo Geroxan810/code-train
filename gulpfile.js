@@ -22,13 +22,11 @@ gulp.task('sass', function() {
 
 gulp.task('browserSync', function() {
   browserSync.init({
-    tunnel: false,
-    online: false,
-    localOnly: true,
    server: {
    baseDir: 'app',
    port: 3000,
   },
+
   })
 })
 
